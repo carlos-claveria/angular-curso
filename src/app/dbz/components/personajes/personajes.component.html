@@ -1,0 +1,18 @@
+<ul class="list-group">
+    <li 
+        *ngFor="let character of characterList; let i = index; let isOdd = odd" 
+        class="list-group-item d-flex justify-content-between " 
+        [ngClass]="{  'list-group-item-dark' : (isOdd == true)  }">
+        <div>
+            {{character.name}} 
+        </div>
+
+        <div>
+            <strong>Power: </strong> {{character.power}}
+        </div>
+
+        <div>
+            <button class="btn btn-outline-danger btn-circle" (click)="onDelCharacter(character.id!)">X</button>
+        </div>
+    </li>
+</ul>
